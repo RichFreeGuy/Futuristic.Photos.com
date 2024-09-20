@@ -1,0 +1,258 @@
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Future Photos</title>
+    <style>
+        /* General styles for body and text */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #020024 0%, #090979 50%, #00d4ff 100%);
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(45deg, #ff4e50, #f9d423);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: text-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes text-glow {
+            from {
+                text-shadow: 0 0 10px #f9d423, 0 0 20px #ff4e50, 0 0 30px #ff4e50;
+            }
+            to {
+                text-shadow: 0 0 20px #f9d423, 0 0 30px #ff4e50, 0 0 40px #ff4e50;
+            }
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown button {
+            background: linear-gradient(45deg, #f9d423, #ff4e50);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 200px;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 78, 80, 0.8);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover button {
+            background: linear-gradient(45deg, #ff4e50, #f9d423);
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            margin-top: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Sections for descriptions */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 40px;
+            border-radius: 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-left, .footer-right {
+            margin: 0 20px;
+        }
+
+        a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .gallery img {
+                width: 100%;
+            }
+
+            nav {
+                margin: 10px 0;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Future Photos</h1>
+        <nav>
+            <div class="dropdown">
+                <button>Menu</button>
+                <div class="dropdown-content">
+                    <a href="#photos">Photos</a>
+                    <a href="#about-photos">About The Photos</a>
+                    <a href="#contact-us">Contact Us</a>
+                    <a href="#about-us">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Photo Gallery Section -->
+    <section id="photos">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="https://i.imgur.com/PbACi9A.png" alt="Photo 1">
+            <img src="https://i.imgur.com/wXcCyLt.png" alt="Photo 2">
+            <img src="https://i.imgur.com/puOb4Ef.png" alt="Photo 3">
+            <img src="https://i.imgur.com/F8p7E24.png" alt="Photo 4">
+        </div>
+    </section>
+
+    <!-- About The Photos Section -->
+    <section id="about-photos">
+        <h2>About The Photos</h2>
+        <p>Future Photos is an exploration of tomorrow's visions brought to life through cutting-edge digital techniques. Each photo transports you to a world beyond today, where innovation and imagination reign supreme. Our futuristic themes range from interstellar landscapes to advanced urban settings, all designed to evoke a sense of awe and curiosity. Get ready to witness the future, captured in the most vivid and breathtaking images possible.</p>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>We love to hear from future enthusiasts! If you'd like to purchase prints, collaborate, or just have a conversation about the future, reach out to us at <a href="mailto:Photo.Future.Com">Photo.Future.Com</a>.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>Future Photos was established by a team of visionary photographers and digital artists who are passionate about bringing the future to life through visual art. Our mission is to create a collection of stunning futuristic photography that sparks the imagination and offers a glimpse into what could be. Every photograph is a masterpiece, designed to transport you to a time and place that may one day exist.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <p><a href="https://richfreeguy.github.io/RichFreeDude.github.io" target="_blank">Visit our partner site</a></p>
+        </div>
+        <div class="footer-right">
+            <p>By, Mada Utgest</p>
+        </div>
+        <div class="footer-left">
+            <p>Sigma</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+    
